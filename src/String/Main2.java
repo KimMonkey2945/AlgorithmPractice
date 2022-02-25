@@ -3,9 +3,44 @@ package String;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main2 {
 
-	// 백준 방법으로 풀기.
+	
+
+
+
+public class Main2 {
+	/* 특정 문자 뒤집기
+	public ArrayList<String> solution(int n ,String[] str){
+		ArrayList<String> answer = new ArrayList<>();
+		
+		for(String x : str) {
+			String tmp = new StringBuilder(x).reverse().toString();
+			answer.add(tmp);
+		}
+		return answer;
+	}
+	*/
+	
+	public ArrayList<String> solution(int n, String[] str) {
+		ArrayList<String> answer = new ArrayList<>();
+		for (String x : str) {
+			char[] s = x.toCharArray();
+			int lt = 0, rt = x.length() - 1;
+			while (lt < rt) {
+				char tmp = s[lt];
+				s[lt] = s[rt];
+				s[rt] = tmp;
+				lt++;
+				rt--;
+			}
+			String tmp = String.valueOf(s);
+			answer.add(tmp);
+		}
+		return answer;
+	}
+
+
+	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		/*
@@ -90,7 +125,7 @@ public class Main2 {
 //		4. 단어 뒤집기
 		//StringBuilder를 사용하는 이유는 String은 불변 이지만, StringBuilder를 이용하면 여러가지 형태로 바꿀 수 있음
 		// 배열과 리스트의 차이에 대해 한번 생각해 봐야함.
-		int number = scan.nextInt();
+	/*	int number = scan.nextInt();
 		String [] words = new String[number];
 		
 		for(int i = 0; i < number; i++) {
@@ -107,7 +142,21 @@ public class Main2 {
 			answer.add(tmp);
 		}
 		System.out.println(answer);
+	*/
+		Main2 T = new Main2();
+		int n = scan.nextInt();
+		String[] str = new String[n];
 		
+		for(int i = 0; i < n; i++) {
+			str[i] = scan.next();
+		}
+		
+		for(String x : T.solution(n, str)) {
+			System.out.println(x);
+		}
+	
+	
 	}
-
+	
+	
 }
