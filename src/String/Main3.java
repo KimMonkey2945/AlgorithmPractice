@@ -84,7 +84,7 @@ public class Main3 {
 //		}
 		
 //		8.유효한 팰린드롬()
-		
+		/*
 		String str = scan.nextLine(); //꺽쇠는 부정을 나타냄
 		scan.close();
 
@@ -97,6 +97,41 @@ public class Main3 {
 		}else {
 			System.out.println("NO");
 		}	
-	}
+		*/
+		
+//		9.숫자만 추출
+		/*
+		String str = scan.nextLine();
+		scan.close();
+		int result = 0; 
+		String answer = "";
+//		str = str.replaceAll("[^0-9]", ""); 숫자를 제외한 나머지를 없애버림
+		
+		방법1.
+	/*	Character.isDigit() 숫자인지 판단함.
+		for(char x : str.toCharArray()) {
+			if(x >= 48 && x <= 57) {
+				result = result *10 +(x-48);
+			}
+		}
 
+		방법2.
+		for(char x : str.toCharArray()) {
+			if(Character.isDigit(x)) {
+				answer += x;
+			}
+		}
+		System.out.println(Integer.parseInt(answer));	
+		*/
+		
+//		10.가장 짧은 문자거리
+		
+		
+		
+		
+		
+		
+		
+		
+	}
 }
